@@ -5,7 +5,7 @@ const TodoList = () => {
   const {todos, addTodo, toggleTodo, deleteTodo} = useTodo()
   const [text, setText] = useState('')
 
-  const handleAdd = ()=>{
+  const handleTodo = ()=>{
     addTodo(text)
     setText('')
   }
@@ -15,24 +15,22 @@ const TodoList = () => {
       <input
       value={text}
       onChange={(e)=>setText(e.target.value)}
-       type="text" />
+      placeholder='enter Todo'
+      />
+      <button onClick={handleTodo}>Add</button>
 
-       <button onClick={handleAdd}>Add</button>
-
-       <ul>
+      <ul>
         {todos.map((todo)=>(
           <li key={todo.id}>
             <span onClick={()=>toggleTodo(todo.id)}
-              style={{textDecoration:todo.completed?'line-through':'none'}}
+              style={{textDecoration:todo.completed?'line-through':'none', cursor:'pointer'}}
               >
                 {todo.text}
-
             </span>
-            <button onClick={()=>deleteTodo(todo.id)}>delete</button>
-
+            <button onClick={()=>deleteTodo(todo.id)}>Delete</button>
           </li>
         ))}
-       </ul>
+      </ul>
     </div>
   )
 }
