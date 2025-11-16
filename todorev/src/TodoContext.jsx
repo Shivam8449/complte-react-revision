@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState } from 'react'
 
 export const TodoData = createContext()
-
 export const useTodo = ()=> useContext(TodoData)
 
 const TodoContext = ({children}) => {
