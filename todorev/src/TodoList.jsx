@@ -11,11 +11,10 @@ const TodoList = () => {
   }
   return (
     <div>
-      <h2>todo App</h2>
+      <h2>Todo App</h2>
       <input
       value={text}
       onChange={(e)=>setText(e.target.value)}
-      placeholder='Enter'
        type="text" />
 
        <button onClick={handleAdd}>Add</button>
@@ -24,7 +23,7 @@ const TodoList = () => {
         {todos.map((todo)=>(
           <li key={todo.id}>
             <span onClick={()=>toggleTodo(todo.id)}
-              style={{textDecoration:todo.completed ? 'line-through':'none', cursor:"pointer"}}
+              style={{textDecoration:todo.completed?'line-through':'none', cursor:'pointer'}}
               >
                 {todo.text}
             </span>
