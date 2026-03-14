@@ -11,11 +11,11 @@ const TodoList = () => {
   }
   return (
     <div>
-      <h1>Todo List</h1>
-      <input 
+      <h1>TodoList</h1>
+      <input type="text"
       value={text}
       onChange={(e)=>setText(e.target.value)}
-      placeholder='todo'
+      placeholder='enter todo'
       />
 
       <button onClick={handleAdd}>Add</button>
