@@ -6,7 +6,7 @@ const Filter = ({category, setCategory}) => {
       <select value={category} onChange={(e)=>setCategory(e.target.value)}>
         <option value="all">All</option>
         <option value="electronics">Electronics</option>
-        <option value="jewelery">jewelery</option>
+        <option value="jewelery">Jewelery</option>
       </select>
     </div>
   )
