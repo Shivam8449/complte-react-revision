@@ -1,13 +1,14 @@
 import React, { createContext, useContext, useState } from 'react'
 
 const TodoData = createContext()
-export const useTodos = ()=>useContext(TodoData)
+export const useTodos  = ()=> useContext(TodoData)
+
 const TodoContext = ({children}) => {
   const [todos, setTodos] = useState([])
 
   const addTodo = (text)=>{
     if(!text.trim()) return
-    setTodos([...todos,{id:Date.now(),text,completed:false}])
+    setTodos([...todos,{id:Date.now(),text,completd:false}])
   }
 
   const toggleTodo = (id)=>{

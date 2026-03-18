@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {useTodos} from './TodoContext'
+import { useTodos } from './TodoContext'
 
 const TodoList = () => {
   const {todos, addTodo, toggleTodo, deleteTodo} = useTodos()
@@ -15,7 +15,7 @@ const TodoList = () => {
       <input type="text"
       value={text}
       onChange={(e)=>setText(e.target.value)}
-      placeholder='enter Todo'
+      placeholder='enter todos'
       />
 
       <button onClick={handleAdd}>Add</button>
@@ -23,7 +23,7 @@ const TodoList = () => {
       <ul>
         {todos.map((todo)=>(
           <li key={todo.id}>
-            <span onClick={()=>toggleTodo(todo.id)}
+            <span onClick={()=>toggleTodo(todo.id)} 
               style={{textDecoration:todo.completed?'line-through':'none', cursor:'pointer'}}
               >
               {todo.text}
